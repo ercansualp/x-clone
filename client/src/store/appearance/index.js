@@ -57,7 +57,7 @@ const initialState = {
     },
     boxShadow: "0 0 15px rgba(101,119,134,0.2), 0 0 3px 1px rgba(101,119,134,0.15)",
     fontSize: 15
-     */
+    */
 }
 
 const appearance = createSlice({
@@ -72,9 +72,12 @@ const appearance = createSlice({
         },
         _setFontSize: (state, action) => {
             state.fontSize = action.payload;
+        },
+        _setBoxShadow: (state, action) => {
+            state.boxShadow = action.payload;
         }
     }
 })
 
-export const { _setBackgroundColor, _setColor, _setFontSize } = appearance.actions;
+export const { _setBackgroundColor, _setColor, _setFontSize, _setBoxShadow } = appearance.actions;
 export default appearance.reducer;

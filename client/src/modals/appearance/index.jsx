@@ -4,7 +4,7 @@ import FontSize from "~/modals/appearance/font-size/index.jsx";
 import Background from "~/modals/appearance/background/index.jsx";
 import Button from "~/components/button/index.jsx";
 
-export default function AppearanceModal() {
+export default function AppearanceModal({ close }) {
     return (
         <div className="flex flex-col">
             <div className="text-[color:var(--color-base)] font-extrabold leading-[28px] text-[23px] text-center mt-8 mb-3">Görünümünü özelleştir</div>
@@ -15,7 +15,7 @@ export default function AppearanceModal() {
                 <Color />
                 <Background />
                 <div className="flex justify-center mt-4">
-                    <Button>Bitti</Button>
+                    <Button onClick={close}>Bitti</Button>
                 </div>
             </div>
         </div>
