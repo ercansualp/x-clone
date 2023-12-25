@@ -29,7 +29,13 @@ export default function Background() {
                     })}>
                     <div
                         className="relative -ml-[11px] -mr-[11px] w-10 h-10 flex items-center justify-center group-hover:bg-[#71767b1a] rounded-full transition-colors">
-                        <div className="w-5 h-5 border-2 border-[#b9cad3] rounded-full"></div>
+                        <div className={classNames("w-5 h-5 border-2 border-[#b9cad3] rounded-full text-white flex items-center justify-center", {
+                            "bg-[color:var(--color-primary)] border-0": backgroundColor.name === "default"
+                        })}>
+                            {
+                                backgroundColor.name === "default" ? <svg width={16} height={16} viewBox="0 0 24 24"><path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z" /></svg> : ""
+                            }
+                        </div>
                     </div>
                     <div className="text-[#0f1419] font-bold leading-5 ml-[5px] flex-1 text-center">Varsayılan</div>
                 </div>
@@ -54,7 +60,13 @@ export default function Background() {
                     })}>
                     <div
                         className="relative -ml-[11px] -mr-[11px] w-10 h-10 flex items-center justify-center group-hover:bg-[#71767b1a] rounded-full transition-colors">
-                        <div className="w-5 h-5 border-2 border-[#5c6e7e] rounded-full"></div>
+                        <div className={classNames("w-5 h-5 border-2 border-[#5c6e7e] rounded-full text-white flex justify-center items-center", {
+                            "bg-[color:var(--color-primary)] border-0": backgroundColor.name === "dimly"
+                        })}>
+                            {
+                                backgroundColor.name === "dimly" ? <svg width={16} height={16} viewBox="0 0 24 24"><path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z" /></svg> : ""
+                            }
+                        </div>
                     </div>
                     <div className="text-[#f7f9f9] font-bold leading-5 ml-[5px] flex-1 text-center">Loş</div>
                 </div>
@@ -79,7 +91,13 @@ export default function Background() {
                     })}>
                     <div
                         className="relative -ml-[11px] -mr-[11px] w-10 h-10 flex items-center justify-center group-hover:bg-[#71767b1a] rounded-full transition-colors">
-                        <div className="w-5 h-5 border-2 border-[#3e4144] rounded-full"></div>
+                        <div className={classNames("w-5 h-5 border-2 border-[#3e4144] rounded-full flex items-center justify-center text-white", {
+                            "bg-[color:var(--color-primary)] border-0": backgroundColor.name === "lights-off"
+                        })}>
+                            {
+                                backgroundColor.name === "lights-off" ? <svg width={16} height={16} viewBox="0 0 24 24"><path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z" /></svg> : ""
+                            }
+                        </div>
                     </div>
                     <div
                         className="text-[#e7e9ea] font-bold leading-5 ml-[5px] flex-1 justify-center flex items-center">Işıklar
