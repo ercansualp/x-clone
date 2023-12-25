@@ -12,7 +12,7 @@ export default function UserPreview({top, left, show, user}) {
     const followers = ["emre", "hasan", ""];
     return (
         <div
-            className={classNames("z-10 w-[300px] min-h-[209.53px] delay-75 transition-all shadow-box absolute bg-black rounded-2xl p-4", {
+            className={classNames("z-10 w-[300px] min-h-[209.53px] delay-75 bg-[color:var(--background-primary)] transition-all shadow-box absolute rounded-2xl p-4", {
                 "opacity-0": !show,
                 "cursor-default": show,
                 "invisible": !show,
@@ -34,16 +34,16 @@ export default function UserPreview({top, left, show, user}) {
                     <Link to={`/${user.username}`}><UserUsername username={user.username}/></Link>
                 </div>
             </div>
-            <div className="mt-3">{user.biography}</div>
+            <div className="mt-3 cursor-auto">{user.biography}</div>
             <div className="mt-3 flex gap-5 items-center">
                 <Link to={`/${user.username}/following`} className="gap-[3.39px] flex items-center hover:underline">
                     <div className="font-bold leading-4 text-sm">{numberFormat(user.followedCount)}</div>
-                    <div className="leading-4 font-normal text-sm text-[#71767b]">Takip Edilen</div>
+                    <div className="leading-4 font-normal text-sm text-[color:var(--color-base-secondary)]">Takip Edilen</div>
                 </Link>
                 {/* fw:400, lh: 16, fs: 14, color: rgb(113, 118, 123) */}
                 <Link to={`/${user.username}/verified_followers`} className="gap-[3.39px] flex items-center hover:underline">
                     <div className="font-bold leading-4 text-sm">{numberFormat(user.followerCount)}</div>
-                    <div className="leading-4 font-normal text-sm text-[#71767b]">Takipçi</div>
+                    <div className="leading-4 font-normal text-sm text-[color:var(--color-base-secondary)]">Takipçi</div>
                 </Link>
             </div>
             <Link to={`/${user.username}/followers_you_follow`} className="mt-3 flex items-center hover:underline">
@@ -70,7 +70,7 @@ export default function UserPreview({top, left, show, user}) {
                         })
                     }
                 </div>
-                <div className={classNames("leading-4 text-[13px] font-normal text-[#71767b]", {"ml-6": followers.length >= 3, "ml-3": followers.length < 3})}>
+                <div className={classNames("leading-4 text-[13px] font-normal text-[color:var(--color-base-secondary)]", {"ml-6": followers.length >= 3, "ml-3": followers.length < 3})}>
                     {
                         followers.length === 1 ? `${followers[0]} tarafından takip ediliyor` :
                         followers.length === 2 ? `${followers[0]} ve ${followers[1]} tarafından takip ediliyor` :

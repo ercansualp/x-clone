@@ -1,5 +1,6 @@
 import {Popover, Transition} from "@headlessui/react";
 import {Link} from "react-router-dom";
+import classNames from "classnames";
 
 export default function More() {
     const items = [
@@ -12,7 +13,7 @@ export default function More() {
     return (
         <Popover className="relative">
             <Popover.Button
-                className="outline-none my-0.5 pr-3 text-[#71767b] text-[13px] font-normal leading-4 hover:underline flex items-center">
+                className="outline-none my-0.5 pr-3 text-[color:var(--color-base-secondary)] text-[13px] font-normal leading-4 hover:underline flex items-center">
                 Daha fazla
                 <svg viewBox="0 0 24 24" width={17} height={13} className="px-0.5">
                     <path
@@ -27,12 +28,15 @@ export default function More() {
                 leave="transition duration-75 ease-out"
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
-                className="absolute bottom-0 right-0 shadow-box rounded-xl w-[300px] bg-black max-w-[178.5px]"
+                className="absolute bottom-0 right-0 shadow-box rounded-xl w-[300px] bg-[color:var(--background-primary)] max-w-[178.5px]"
             >
                 <Popover.Panel>
                     {
                         items.map((item, index) => (
-                            <Link to={item.url} key={index} className="block py-3 px-4 rounded-t-xl font-bold leading-5 hover:bg-[#eff3f41a] hover:cursor-pointer">{item.title}</Link>
+                            <Link to={item.url} key={index} className={classNames("block py-3 px-4 font-bold leading-5 hover:bg-[color:var(--background-secondary)] hover:cursor-pointer", {
+                                "rounded-t-xl": index === 0,
+                                "rounded-b-xl": index === items.length - 1
+                            })}>{item.title}</Link>
                         ))
                     }
                 </Popover.Panel>

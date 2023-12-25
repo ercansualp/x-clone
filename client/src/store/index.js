@@ -1,10 +1,14 @@
 import {configureStore} from "@reduxjs/toolkit";
-import auth from "~/store/auth/index.js";
+import auth from "~/store/auth";
+import modal from "~/store/modal";
+import appearance from "~/store/appearance";
 
 const store = configureStore({
     reducer: {
         //stores
-        auth
+        auth,
+        modal,
+        appearance
     }
 })
 

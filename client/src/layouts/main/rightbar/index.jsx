@@ -46,7 +46,7 @@ export default function Rightbar() {
                         }
                         {
                             showComponents.agenda.find(path => path === pathname || path === "*" || path.includes("/lists")) ? (
-                                <RightbarSection title="Türkiye gündemleri" moreUrl="/i/trends" moreVisible={true}>
+                                <RightbarSection title="Neler oluyor?" moreUrl="/i/trends" moreVisible={true}>
                                     <Agenda/>
                                 </RightbarSection>
                             ) : ""

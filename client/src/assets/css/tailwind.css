@@ -13,5 +13,9 @@
 */
 
 body {
-    @apply text-[15px] text-[#e7e9ea] bg-black;
+    @apply text-[15px] text-[color:var(--color-base)] bg-[color:var(--background-primary)];
+}
+
+.shadow-box {
+    box-shadow: var(--box-shadow);
 }

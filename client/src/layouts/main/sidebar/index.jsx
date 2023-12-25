@@ -5,7 +5,7 @@ import {userAccount} from "~/store/auth/hooks.js";
 
 export default function Sidebar() {
     return (
-        <aside className="w-[275px] px-2 flex flex-col h-screen sticky top-0 overflow-x-hidden overflow-y-auto">
+        <aside className="w-[275px] px-2 flex flex-col h-screen sticky top-0">
             <Logo />
             <Menu />
             {userAccount() && <Account />}

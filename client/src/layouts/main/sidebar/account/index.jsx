@@ -3,6 +3,7 @@ import {userAccount} from "~/store/auth/hooks.js";
 import More from "~/layouts/main/sidebar/account/more/index.jsx";
 import Avatar from "~/components/avatar/index.jsx";
 import Verified from "~/components/verified/index.jsx";
+import UserUsername from "~/components/user-username/index.jsx";
 
 export default function Account() {
     const account = userAccount();
@@ -11,11 +12,11 @@ export default function Account() {
         <Popover className="mt-auto relative">
             <Popover.Button className="group w-full outline-none">
                 <div
-                    className="my-3 h-[65.063px] p-3 group-hover:bg-[#eff3f41a] hover:cursor-pointer rounded-full transition-colors">
+                    className="my-3 h-[65.063px] p-3 group-hover:bg-[color:var(--background-third)] hover:cursor-pointer rounded-full transition-colors">
                     <div className=" w-full h-full flex items-center">
                         <Avatar avatar={account.avatar} />
                         <div className="flex flex-col mx-3 items-start">
-                            <div className="font-bold flex items-center">
+                            <div className="font-bold flex items-center text-[color:var(--color-base)]">
                                 {account.fullName}
                                 {
                                     account.verified ? (
@@ -23,7 +24,7 @@ export default function Account() {
                                     ) : ""
                                 }
                             </div>
-                            <div className="text-[#71767b] font-normal">@{account.username}</div>
+                            <UserUsername username={account.username} />
                         </div>
                         <div className="ml-auto">
                             <svg viewBox="0 0 24 24" width="1.25em" height="1.25em">
@@ -42,7 +43,7 @@ export default function Account() {
                 leave="transition duration-75 ease-out"
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
-                className="py-3 absolute bottom-full left-1/2 -translate-x-1/2 shadow-box rounded-2xl w-[300px] bg-black"
+                className="py-3 absolute bottom-full left-1/2 -translate-x-1/2 shadow-box rounded-2xl w-[300px] bg-[color:var(--background-primary)]"
             >
                 <Popover.Panel>
                     <More />

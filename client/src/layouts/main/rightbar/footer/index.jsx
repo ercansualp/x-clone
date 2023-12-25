@@ -15,11 +15,11 @@ export default function Footer() {
             <div className="px-4 flex-wrap flex flex-row">
                 {
                     items.map((item, index) => (
-                        <Link key={index} to={item.path} className="my-0.5 pr-3 text-[#71767b] text-[13px] font-normal leading-4 hover:underline">{item.title}</Link>
+                        <Link key={index} to={item.path} className="my-0.5 pr-3 text-[color:var(--color-base-secondary)] text-[13px] font-normal leading-4 hover:underline">{item.title}</Link>
                     ))
                 }
                 <More />
-                <span className="my-0.5 pr-3 text-[#71767b] text-[13px] font-normal leading-4">
+                <span className="my-0.5 pr-3 text-[color:var(--color-base-secondary)] text-[13px] font-normal leading-4">
                     &copy; {new Date().getFullYear()} X Corp.
                 </span>
             </div>

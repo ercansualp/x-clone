@@ -15,14 +15,14 @@ export default function More() {
                         <div key={index} className="group">
                             <div
                                 className={classNames("my-3 h-[65.063px] p-3",{
-                                    "group-hover:bg-[#eff3f41a] transition-colors hover:cursor-pointer": account.id !== currentAccount.id
+                                    "group-hover:bg-[color:var(--background-secondary)] transition-colors hover:cursor-pointer": account.id !== currentAccount.id
                                 })}>
                                 <div className="group w-full h-full">
                                     <div className=" w-full h-full flex items-center">
                                         <img src={account.avatar} alt="Profil fotoğrafı"
                                              className="rounded-full w-10 h-10"/>
                                         <div className="flex flex-col mx-3">
-                                            <div className="font-bold max-w-[199px] text-ellipsis overflow-hidden whitespace-nowrap flex items-center">
+                                            <div className="text-[color:var(--color-base)] font-bold max-w-[199px] text-ellipsis overflow-hidden whitespace-nowrap flex items-center">
                                                 {account.fullName}
                                                 {
                                                     account.verified ? (
@@ -30,7 +30,7 @@ export default function More() {
                                                     ) : ""
                                                 }
                                             </div>
-                                            <div className="text-[#71767b] max-w-[199px] font-normal text-ellipsis overflow-hidden whitespace-nowrap">@{account.username}</div>
+                                            <div className="text-[color:var(--color-base-secondary)] max-w-[199px] font-normal text-ellipsis overflow-hidden whitespace-nowrap">@{account.username}</div>
                                         </div>
                                         {
                                             currentAccount.id === account.id && (
@@ -51,7 +51,7 @@ export default function More() {
                 }
             </div>
             <div className="my-3 h-[1px] bg-[#2f3336]" />
-            <div>
+            <div className="text-[color:var(--color-base)]">
                 <NavLink to="/i/flow/login" className="group"><MoreItem title="Var olan bir hesap ekle"/></NavLink>
                 {accounts().length !== 1 && <NavLink to="/account/switch" className="group"><MoreItem title="Hesapları yönet"/></NavLink>}
                 <NavLink to="/logout" className="group"><MoreItem

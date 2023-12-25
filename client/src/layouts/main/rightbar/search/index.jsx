@@ -3,7 +3,7 @@ import {useClickAway} from "react-use";
 
 export default function Search() {
     const [value, setValue] = useState("");
-    const [svgColor, setSvgColor] = useState("#71767b");
+    const [svgColor, setSvgColor] = useState("var(--color-base-secondary)");
     const [focus, setFocus] = useState(false);
     const [users, setUsers] = useState([]);
     const [searchUsers, setSearchUsers] = useState([]);
@@ -11,7 +11,7 @@ export default function Search() {
 
     const focusSearchInput = () => {
         setFocus(true);
-        setSvgColor("#1d9cf0");
+        setSvgColor("var(--color-primary)");
     }
 
     useClickAway(ref, () => {
@@ -19,8 +19,8 @@ export default function Search() {
     });
 
     return (
-        <div className="mb-3 h-[53px] flex items-center bg-black sticky top-0 z-50">
-            <div className="relative group" onFocus={focusSearchInput} onBlur={() => setSvgColor("#71767b")} ref={ref}>
+        <div className="mb-3 h-[53px] flex items-center bg-[color:var(--background-primary)] sticky top-0 z-10">
+            <div className="relative" onFocus={focusSearchInput} onBlur={() => setSvgColor("var(--color-base-secondary)")} ref={ref}>
                 <div className="absolute flex justify-center items-center w-[46px] h-[44px] left-0 top-0">
                     <svg viewBox="0 0 24 24" width={32} height={18.75}>
                         <path
@@ -33,7 +33,7 @@ export default function Search() {
                     onChange={(e) => setValue(e.target.value)}
                     type="text"
                     placeholder="Ara"
-                    className="placeholder-[#757575] pl-[56px] pr-[46px] focus:border-[#1d9cf0] outline-none focus:border w-[350px] h-[44px] rounded-full bg-[#202327]"
+                    className="placeholder-[#757575] pl-[56px] pr-[46px] focus:border-[color:var(--color-primary)] outline-none focus:border w-[350px] h-[44px] rounded-full bg-[color:var(--background-third)] focus:bg-[color:var(--background-primary)]"
                 />
                 {
                     value && (
@@ -49,14 +49,14 @@ export default function Search() {
                 }
                 {
                     focus && (
-                        <div className="z-10 searchBox absolute top-full bg-black rounded-lg shadow-box w-full max-h-[calc(80vh-53px)] overflow-y-auto overflow-x-hidden">
+                        <div className="z-10 searchBox absolute top-full bg-[color:var(--background-primary)] rounded-lg shadow-box w-full max-h-[calc(80vh-53px)] overflow-y-auto overflow-x-hidden">
                             {
                                 users.length === 0 && !value ? (
-                                    <div className="px-3 pt-5 pb-8 text-center font-normal text-[#71767b] leading-5">
+                                    <div className="px-3 pt-5 pb-8 text-center font-normal text-[color:var(--color-base-secondary)] leading-5">
                                         Kişileri, listeleri veya anahtar kelimeleri aramayı dene
                                     </div>
                                 ) : value ? (
-                                    <>
+                                    <div className="shadow-box">
                                         <div className="py-3 px-4 flex items-center min-h-[64px] hover:cursor-pointer transition-colors hover:bg-[#eff3f41a] font-bold">
                                             <div className="mr-3 flex items-center justify-center w-10 h-10">
                                                 <svg width={20} height={20} viewBox="0 0 21 21"><path fill="#e7e9ea" d="M9.094 3.095c-3.314 0-6 2.686-6 6s2.686 6 6 6c1.657 0 3.155-.67 4.243-1.757 1.087-1.088 1.757-2.586 1.757-4.243 0-3.314-2.686-6-6-6zm-9 6c0-4.971 4.029-9 9-9s9 4.029 9 9c0 1.943-.617 3.744-1.664 5.215l4.475 4.474-2.122 2.122-4.474-4.475c-1.471 1.047-3.272 1.664-5.215 1.664-4.97-.001-8.999-4.03-9-9z" /></svg>
@@ -82,7 +82,7 @@ export default function Search() {
                                                     <img className="w-10 h-10 rounded-full mr-3" src="https://pbs.twimg.com/profile_images/1200814302820753410/AhAh3xlU_400x400.png" alt=""/>
                                                     <div className="flex-col inline-flex">
                                                         <div className="font-bold leading-5 max-w-[250px] overflow-hidden whitespace-nowrap">./prototurk</div>
-                                                        <div className="font-normal text-[#71767b] leading-5">@prototurkcom</div>
+                                                        <div className="font-normal text-[color:var(--color-base-secondary)] leading-5">@prototurkcom</div>
                                                     </div>
                                                     <div className="w-[30px] h-[30px] rounded-full flex items-center justify-center ml-auto hover:bg-[#172631] transition-colors">
                                                         <svg width={18} height={18} viewBox="0 0 24 24"><path fill="#1d9bf0" d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z" /></svg>
@@ -93,7 +93,7 @@ export default function Search() {
                                         <div className="p-4 h-[52px] hover:bg-[#eff3f41a] cursor-pointer transition-colors">
                                             <div className="leading-5 font-normal break-all">@{value} adlı kullanıcıya git</div>
                                         </div>
-                                    </>
+                                    </div>
                                 ) : (
                                     <>
                                         <>
@@ -107,7 +107,7 @@ export default function Search() {
                                                         <img className="w-10 h-10 rounded-full mr-3" src="https://pbs.twimg.com/profile_images/1200814302820753410/AhAh3xlU_400x400.png" alt=""/>
                                                         <div className="flex-col inline-flex">
                                                             <div className="font-bold leading-5 max-w-[250px] overflow-hidden whitespace-nowrap">./prototurk</div>
-                                                            <div className="font-normal text-[#71767b] leading-5">@prototurkcom</div>
+                                                            <div className="font-normal text-[color:var(--color-base-secondary)] leading-5">@prototurkcom</div>
                                                         </div>
                                                         <div className="w-[30px] h-[30px] rounded-full flex items-center justify-center ml-auto hover:bg-[#172631] transition-colors">
                                                             <svg width={18} height={18} viewBox="0 0 24 24"><path fill="#1d9bf0" d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z" /></svg>

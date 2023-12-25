@@ -1,6 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 import AvatarErcan from "../../assets/img/AhAh3xlU_400x400.png";
-import AvatarHasan from "../../assets/img/1645220211246.jpeg";
 
 const initialState = {
     currentAccount: {
@@ -11,7 +10,7 @@ const initialState = {
         email: "ercansualp@outlook.com.tr",
         password: "123456",
         banner: "https://yt3.googleusercontent.com/wbvNKU1qb9-D8UwpLFqx9ieV3wM6qz36qBqa_Tr7GO3WjYl8Y18pYFAd6cqJ_SzohalCUFMwBg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-        birthdate: new Date(2000, 6, 6),
+        birthdate: "06/07/2000",
         biography: "Temet Nosce",
         verified: 1,
         gender: 1,
@@ -26,7 +25,7 @@ const initialState = {
             email: "ercansualp@outlook.com.tr",
             password: "123456",
             banner: "https://yt3.googleusercontent.com/wbvNKU1qb9-D8UwpLFqx9ieV3wM6qz36qBqa_Tr7GO3WjYl8Y18pYFAd6cqJ_SzohalCUFMwBg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-            birthdate: new Date(2000, 6, 6),
+            birthdate: "06/07/2000",
             biography: "Temet Nosce",
             verified: 1,
             gender: 1,
@@ -40,7 +39,7 @@ const initialState = {
             email: "markzuckerberg@outlook.com.tr",
             password: "123456",
             banner: "https://yt3.googleusercontent.com/wbvNKU1qb9-D8UwpLFqx9ieV3wM6qz36qBqa_Tr7GO3WjYl8Y18pYFAd6cqJ_SzohalCUFMwBg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-            birthdate: new Date(2000, 6, 6),
+            birthdate: "06/07/2000",
             biography: "",
             verified: 0,
             gender: 1,

@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 export default function Premium() {
     return (
         <div className="py-3 !pt-0 px-4">
-            <div className="mb-2.5 font-normal leading-5">
+            <div className="mb-2.5 font-normal leading-5 text-[--color-base]">
                 Yeni özellikleri açmak için abone ol ve uygun olman durumunda reklam geliri payı kazan.
             </div>
             <NavLink to="/i/verified-choose">
