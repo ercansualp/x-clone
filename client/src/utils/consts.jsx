@@ -281,8 +281,8 @@ export const moreItems = [
 export const colors = [
     {value: "bg-[#1d9bf0]", active: false},
     {value: "bg-[#ffd400]", active: false},
-    {value: "bg-[#f91880]", active: true},
+    {value: "bg-[#f91880]", active: false},
     {value: "bg-[#7856ff]", active: false},
     {value: "bg-[#ff7a00]", active: false},
-    {value: "bg-[#00ba7c]", active: false}
+    {value: "bg-[#00ba7c]", active: true}
 ];

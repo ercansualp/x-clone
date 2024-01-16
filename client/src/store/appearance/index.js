@@ -2,6 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     // Işıklar kapalı
+    /*
     backgroundColor: {
         name: "lights-off",
         primary: "#000",
@@ -18,6 +19,7 @@ const initialState = {
     },
     boxShadow: "rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px",
     fontSize: 15
+    */
 
     /*
     // Loş
@@ -39,7 +41,6 @@ const initialState = {
     fontSize: 15
      */
 
-    /*
     // Varsayılan
     backgroundColor: {
         name: "default",
@@ -57,7 +58,6 @@ const initialState = {
     },
     boxShadow: "0 0 15px rgba(101,119,134,0.2), 0 0 3px 1px rgba(101,119,134,0.15)",
     fontSize: 15
-    */
 }
 
 const appearance = createSlice({

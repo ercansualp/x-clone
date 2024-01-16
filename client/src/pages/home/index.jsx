@@ -1,6 +1,9 @@
 import {Helmet} from "react-helmet";
 import {useState} from "react";
 import classNames from "classnames";
+import NewTweet from "~/pages/home/new-tweet/index.jsx";
+import CustomizeView from "~/pages/home/customize-view/index.jsx";
+import Posts from "~/pages/home/posts/index.jsx";
 
 export default function Home() {
     const [value, setValue] = useState(0);
@@ -11,7 +14,7 @@ export default function Home() {
             </Helmet>
 
             <div className="flex flex-col h-full">
-                <div className="flex border-b border-[color:var(--background-third)] sticky top-0 h-[51px]">
+                <div className="flex border-b border-[color:var(--background-third)] sticky top-0 h-[51px] bg-white z-10">
                     <div className="flex-1 pr-1 font-medium flex text-sm leading-[19px] text-[color:var(--color-third)]">
                         <button onClick={() => setValue(0)} className="w-[256.125px] px-[15px] flex justify-center items-center hover:bg-[#e7e9ea1a] cursor-pointer transition-colors">
                             <span className="relative">
@@ -38,6 +41,9 @@ export default function Home() {
                         </button>
                     </div>
                 </div>
+                <NewTweet />
+                <CustomizeView />
+                <Posts />
             </div>
         </>
     )

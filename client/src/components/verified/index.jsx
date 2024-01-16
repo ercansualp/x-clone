@@ -1,4 +1,4 @@
-export default function Verified(type) {
+export default function Verified({type}) {
     if (type === "blue") {
         return (
             <svg className="ml-0.5" width={18.75} height={18.75}
